@@ -2,20 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <title>Femcy Tech</title>
 </head>
 
 <body>
+    <div class="container">
+        <input id="email-input" type="email" placeholder="Email">
+        <input id="password-input" type="password" placeholder="Contraseña">
+        <button id="login-button" class="btn btn-action">Ingresar</button>
+        <button id="register-button" class="btn btn-secondary" onclick="registroPage()">Registrar</button>
+        <button id="logout-button" class="btn btn-action hide">Cerrar Sesión</button>
+    </div>
+
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script src="./services/firebase/initialize.js"></script>
+    <script src="./services/auth/auth.js"></script>
+    <script src="./pages/login/login.js"></script>
 
-    <div id="app-container" >
-        <object type="text/html" data="pages/login/login.html"></object>
     </div>
+    <button type="button" id="iconLike" onclick="clickCounter()">
+        <i id="icon" class="fas fa-archive"></i>
+    </button>
+    </div>
+
+    <section class="registro d-none" onclick="" id="registro">
+        <form>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationServer01">Nombre</label>
+                    <input type="text" class="form-control is-valid" id="validationServer01" placeholder="Ingresa tu nombre" required>
+                    <div class="valid-feedback"> </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationServer02">Apellido</label>
+                    <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Ingresa tu apellido" required>
+                    <div class="valid-feedback"> </div>
+                </div>
+                <div class="col-md-4 mb-3" id="mail">
+                    <label for="validationServerUsername">Email</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control is-valid" id="validationServerUsername" placeholder="Ingresa tu mail" aria-describedby="inputGroupPrepend3"
+                            required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationServer03">Contraseña</label>
+                    <input type="password" class="form-control is-valid" maxlength='8' minlength='6' id="validationServer03" placeholder="Ingresa tu contraseña"
+                        required id="pass">
+                    <div class="invalid-feedback">Debe poseer máximo 8 carácteres y sólo pueden ser números</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input is-valid" type="checkbox" value="" id="invalidCheck3" required>
+                    <label class="form-check-label" for="invalidCheck3">
+                        Estoy de acuerdo con los
+                        <button id="conditionsPage" onclick="termsAndConditions()">terminos y condiciones.</button>
+                    </label>
+                </div>
+            </div>
+            <button class="btn-Registro" type="submit" onclick="registrolist()">REGISTRARSE</button>
+        </form>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <script src="../app/like.js"></script>
 </body>
 
 </html>
