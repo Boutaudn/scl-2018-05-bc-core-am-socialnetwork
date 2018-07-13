@@ -1,7 +1,8 @@
 let counter = 0;
 function clickCounter() {
-    counter += 1;
-    document.getElementById("icon").innerHTML = counter;
+  counter += 1;
+  document.getElementById("icon").innerHTML = counter;
+  document.getElementById('registro').classList.add('d-none');
 }
 
 function registroYes() {
@@ -16,7 +17,7 @@ function registroPage() {
   }
 }
 function registrolist() {
-  if (registro.className.indexOf('d-none') >= 0){
+  if (registro.className.indexOf('d-none') >= 0) {
     registroNone()
   }
 }
