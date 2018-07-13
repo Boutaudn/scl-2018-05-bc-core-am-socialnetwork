@@ -1,0 +1,22 @@
+{
+  "name": "scl-2018-05-bc-core-am-socialnetwork",
+  "version": "1.0.0",
+  "description": "proyecto social network de laboratoria",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boutaudn/scl-2018-05-bc-core-am-socialnetwork.git"
+  },
+  "author": "N Boutaud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Boutaudn/scl-2018-05-bc-core-am-socialnetwork/issues"
+  },
+  "homepage": "https://github.com/Boutaudn/scl-2018-05-bc-core-am-socialnetwork#readme",
+  "dependencies": {
+    "mocha": "^5.2.0"
+  }
+}
