@@ -16,6 +16,5 @@ auth.onAuthStateChanged(user => {
         registerHtml.parentNode.location = "../main/main.html";
     } 
     else { // usuario no logueado
-
     }
 });

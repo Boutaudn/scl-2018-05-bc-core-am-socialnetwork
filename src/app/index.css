@@ -8,11 +8,8 @@
   display: none;
 }
 #login-button{
-  display: block;
+  display: inline-block;
   text-align: center;
-}
-body{
-background-color: blanchedalmond;
 }
 .container{
   text-align: center;

@@ -1,13 +1,13 @@
 var firebaseInicialize = () => {
-    var config = {
-        apiKey: "AIzaSyAYu58bBgK8kTNtmD4U2N77pwcrSWtJlrE",
-        authDomain: "red-social-79698.firebaseapp.com",
-        databaseURL: "https://red-social-79698.firebaseio.com",
-        projectId: "red-social-79698",
-        storageBucket: "red-social-79698.appspot.com",
-        messagingSenderId: "1019293340745"
+  var config = {
+    apiKey: "AIzaSyA9KOG2Mc1NSFQ7h9OPNJbNJEDxJ62ivYI",
+    authDomain: "red-social-cfa45.firebaseapp.com",
+    databaseURL: "https://red-social-cfa45.firebaseio.com",
+    projectId: "red-social-cfa45",
+    storageBucket: "red-social-cfa45.appspot.com",
+    messagingSenderId: "19839803644"
     };
-    firebase.initializeApp(config);
+  firebase.initializeApp(config);
 };
 
 firebaseInicialize();
