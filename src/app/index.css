@@ -20,3 +20,8 @@ background-color: blanchedalmond;
 .containerInfo{
   text-align: center;
 }
+#messageContainer{
+  height: 30vh;
+  text-align: right;
+  border: solid white;
+}
