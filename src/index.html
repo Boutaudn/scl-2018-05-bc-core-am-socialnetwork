@@ -9,7 +9,7 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  
+
   <link rel="stylesheet" href="index.css">
   <title>Femcy Tech</title>
 </head>
@@ -64,24 +64,28 @@
   </div>
   <!-- Fin del logo -->
 
-  <!-- botón like -->
-  <button type="button" id="iconLike" onclick="clickCounter()">
-    <i id="icon" class="fas fa-archive"></i>
-  </button>
-  </div>
-  <!-- fin botón like -->
+
 
 
   <!-- post -->
-  <div id="post"></div>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+  <div id="post">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <textarea rows="4" cols="50"></textarea>
+
+
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
     </div>
+    <!-- botón like -->
+    <button type="button" id="iconLike" onclick="clickCounter()">
+      <i id="icon" class="fas fa-archive"></i>
+    </button>
+  </div>
+  <!-- fin botón like -->
   </div>
   <!-- fin del post -->
 
@@ -103,19 +107,19 @@
     <script src="assets/js/app.js"></script>
     <script src="../app/like.js"></script>
   </section>
-<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA9KOG2Mc1NSFQ7h9OPNJbNJEDxJ62ivYI",
-    authDomain: "red-social-cfa45.firebaseapp.com",
-    databaseURL: "https://red-social-cfa45.firebaseio.com",
-    projectId: "red-social-cfa45",
-    storageBucket: "red-social-cfa45.appspot.com",
-    messagingSenderId: "19839803644"
-  };
-  firebase.initializeApp(config);
-</script>
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA9KOG2Mc1NSFQ7h9OPNJbNJEDxJ62ivYI",
+      authDomain: "red-social-cfa45.firebaseapp.com",
+      databaseURL: "https://red-social-cfa45.firebaseio.com",
+      projectId: "red-social-cfa45",
+      storageBucket: "red-social-cfa45.appspot.com",
+      messagingSenderId: "19839803644"
+    };
+    firebase.initializeApp(config);
+  </script>
 </body>
 
 </html>
