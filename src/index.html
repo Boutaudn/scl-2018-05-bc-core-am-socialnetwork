@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
 
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./assets/css/">
   <title>Femcy Tech</title>
 </head>
 
@@ -64,6 +64,59 @@
   </div>
   <!-- Fin del logo -->
 
+  <!-- Login -->
+  <div id="login-page" class="login-page mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">INGRESAR</div>
+      </div>
+
+      <div style="padding-top:30px" class="panel-body">
+
+        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+        <form id="loginform" class="form-horizontal" role="form">
+
+          <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-user"></i>
+            </span>
+            <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="correo electrónico">
+          </div>
+
+          <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-lock"></i>
+            </span>
+            <input id="login-password" type="password" class="form-control" name="password" placeholder="contraseña">
+          </div>
+
+          <div style="margin-top:10px" class="form-group">
+            <!-- Button -->
+
+            <div class="col-sm-12 controls">
+              <a id="btn-login" onclick="login()" class="btn btn-success">Ingresar</a>
+              <a id="btn-fblogin" onclick="loginWithFacebook()" class="btn btn-primary">Ingresar con Facebook</a>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12 control">
+              <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                Si no te haz registrado,
+                <a href="#" onclick="showRegisterPage()">
+                  registrate aquí!
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- Fin Login -->
 
 
 
@@ -97,19 +150,22 @@
 
 
   <!-- links de bootstrap -->
-  <section class="linksJavaScript">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="../app/like.js"></script>
-  </section>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="../app/like.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+
+  <!-- js -->
+  <script src="./assets/js/app.js"></script>
+
+  <!-- Firebase inicialize -->
   <script>
-    // Initialize Firebase
     var config = {
       apiKey: "AIzaSyA9KOG2Mc1NSFQ7h9OPNJbNJEDxJ62ivYI",
       authDomain: "red-social-cfa45.firebaseapp.com",
