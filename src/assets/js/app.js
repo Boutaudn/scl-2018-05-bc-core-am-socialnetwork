@@ -51,8 +51,8 @@ db.collection("post").onSnapshot((querySnapshot) => {
           <h5>${doc.data().title}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${doc.data().name}</h6>
           <p>${doc.data().texto}</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <button class="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button>
+          <button class="btn btn-warning" onclick="editar('${doc.id}', '${doc.data().title}', '${doc.data().texto}')">Editar</button>
         </div>
       </div>`
       /* <tr>
@@ -69,7 +69,7 @@ db.collection("post").onSnapshot((querySnapshot) => {
 
 // Borrar documentos
 function eliminar(id){
-  db.collection("users").doc(id).delete().then(function() {
+  db.collection("post").doc(id).delete().then(function() {
     console.log("Document successfully deleted!");
   }).catch(function(error) {
     console.error("Error removing document: ", error);
@@ -77,31 +77,27 @@ function eliminar(id){
 }
 
 // Editar documento
-function editar(id, nombre, apellido, fecha){
-  document.getElementById('nombre').value = nombre;
-  document.getElementById('apellido').value = apellido;
-  document.getElementById('fecha').value = fecha;
+function editar(id, titulo, texto){
+  document.getElementById('titulo').value = titulo;
+  document.getElementById('text').value = texto;
   var boton = document.getElementById('boton');
   boton.innerHTML = 'Editar';
   boton.onclick = function(){
 
 
-    var washingtonRef = db.collection("users").doc(id);
-    var nombre = document.getElementById('nombre').value;
-    var apellido = document.getElementById('apellido').value;
-    var fecha = document.getElementById('fecha').value;
+    let editarPost = db.collection("post").doc(id);
+    let title = document.getElementById('titulo').value;
+    let texto = document.getElementById('text').value;
 
-    return washingtonRef.update({
-      first: nombre,
-      last: apellido,
-      born: fecha,
+    return editarPost.update({
+      title: title,
+      texto: texto
     })
     .then(function() {
       console.log("Document successfully updated!");
       boton.innerHTML = 'Guardar';
-      document.getElementById('nombre').value = '';
-      document.getElementById('apellido').value = '';
-      document.getElementById('fecha').value = '';
+      document.getElementById('titulo').value = '';
+      document.getElementById('text').value = '';
     })
     .catch(function(error) {
         // The document probably doesn't exist.
