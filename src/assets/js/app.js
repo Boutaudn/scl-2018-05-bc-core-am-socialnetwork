@@ -29,8 +29,9 @@ function guardar() {
   })
     .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
-      console.log("text");
+      console.log('sí se ha guardado');
       document.getElementById('text').value = '';
+      document.getElementById('titulo').value = '';
     })
     .catch(function (error) {
       console.error("Error adding document: ", error);
@@ -49,11 +50,12 @@ db.collection("post").onSnapshot((querySnapshot) => {
       <div class="card" style="width: 20rem;">
         <div class="card-body">
           <h5>${doc.data().title}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${doc.data().name}</h6>
+          <h11 class="card-subtitle mb-2 text-muted">${doc.data().name}</h11>
           <p>${doc.data().texto}</p>
-          <button class="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button>
+          <button class="btn btn-danger" onclick="myFunction(event, '${doc.id}')">Eliminar</button>
           <button class="btn btn-warning" onclick="editar('${doc.id}', '${doc.data().title}', '${doc.data().texto}')">Editar</button>
-        </div>
+          <h6>${doc.data().time}</h6>
+          </div>
       </div>`
       /* <tr>
             <th scope="row">${doc.data().time}</th>
@@ -76,6 +78,15 @@ function eliminar(id){
   });
 }
 
+function myFunction(event, id) {
+  if (confirm("estas seguro??")) {
+    eliminar(id);
+  } else {
+    console.log('no eliminar');
+  }
+}
+
+
 // Editar documento
 function editar(id, titulo, texto){
   document.getElementById('titulo').value = titulo;
@@ -83,7 +94,6 @@ function editar(id, titulo, texto){
   var boton = document.getElementById('boton');
   boton.innerHTML = 'Editar';
   boton.onclick = function(){
-
 
     let editarPost = db.collection("post").doc(id);
     let title = document.getElementById('titulo').value;
