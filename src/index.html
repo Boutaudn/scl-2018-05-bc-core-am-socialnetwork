@@ -68,17 +68,19 @@
 
 
   <!-- post -->
+  <div id="muro"></div>
   <div id="post">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <textarea rows="4" cols="50"></textarea>
+        <input type="text" id="titulo">
+        <textarea id="text" rows="4" cols="50"></textarea>
 
 
         <a href="#" class="card-link">Card link</a>
         <a href="#" class="card-link">Another link</a>
       </div>
+      <button class="btn btn-info" onclick="guardar()" id="boton">Guardar</button>
+
     </div>
     <!-- botón like -->
     <button type="button" id="iconLike" onclick="clickCounter()">
@@ -86,6 +88,7 @@
     </button>
   </div>
   <!-- fin botón like -->
+  <button type=""></button>
   </div>
   <!-- fin del post -->
 
