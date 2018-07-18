@@ -1,3 +1,107 @@
+
+window.onload = () => {
+  firebase.auth().onAuthStateChanged((user) => {
+      if (user) {             //Si estamos logueados
+
+         showDashboardPage(); //Cambiar a la pagina de dasboard
+         setupMessages();     //Dejar todo listo para mostrar mensajes. 
+
+      } else {                //No estamos logueados
+         showLoginPage();     //Cambiar a la pagina de login
+      }
+  });
+};
+
+/* ----Login---- */
+function login() {
+  const emailValue = document.getElementById("login-username").value;
+  const passwordValue = document.getElementById("login-password").value;
+  firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
+      .then(() => {
+          console.log("Usuario con login exitoso");
+      })
+      .catch((error) => {
+          console.log("Error de firebase > " + error.code);
+          console.log("Error de firebase, mensaje > " + error.message);
+      });
+}
+
+function loginWithFacebook() {
+  const provider = new firebase.auth.FacebookAuthProvider();
+  //provider.addScope("user_birthday"); tienen que pedirle permiso a facebook
+  provider.setCustomParameters({
+      'display': 'popup'
+  });
+  firebase.auth().signInWithPopup(provider)
+      .then(() => {
+          console.log("Login con facebook");
+      })
+      .catch((error) => {
+          console.log("Error de firebase > " + error.code);
+          console.log("Error de firebase, mensaje > " + error.message);
+      });
+  scope: 'email'//acceder al email del usuario
+
+}
+
+function logout() {
+  firebase.auth().signOut()
+      .then(() => {
+          console.log("Chao");
+      })
+      .catch();
+}
+/* -------FIN LOGIN------- */
+
+/* -------router, login, register------ */
+function showPerfilPage() {
+  $('#login-page').hide(); 
+  $('#perfil-page').show(); 
+  $('#dashboard-page').hide();
+  $('#register-page').hide();
+}
+
+function showRegisterPage() {
+  $('#login-page').hide(); 
+  $('#perfil-page').hide(); 
+  $('#dashboard-page').hide();
+  $('#register-page').show();
+}
+
+function showDashboardPage() {
+  $('#login-page').hide(); 
+  $('#perfil-page').hide(); 
+  $('#dashboard-page').show();
+  $('#register-page').hide();
+}
+
+function showLoginPage() {
+  $('#login-page').show(); 
+  $('#perfil-page').hide(); 
+  $('#dashboard-page').hide();
+  $('#register-page').hide();
+}
+/* -------fin router------ */
+
+/* --------Register------- */
+function register() {
+  const emailValue = document.getElementById("register-email").value;
+  const passwordValue = document.getElementById("register-password").value;
+  
+  firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
+      .then(() => {
+          console.log("Usuario registrado");
+      })
+      .catch((error) => {
+          console.log("Error de firebase > " + error.code);
+          console.log("Error de firebase, mensaje > " + error.message);
+      });
+}
+/* -----Fin register----- */
+
+
+
+
 // inicializacion de firebase
 firebase.initializeApp({
   apiKey: "AIzaSyA9KOG2Mc1NSFQ7h9OPNJbNJEDxJ62ivYI",
