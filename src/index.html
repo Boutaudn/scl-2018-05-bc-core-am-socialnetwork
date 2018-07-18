@@ -10,137 +10,178 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
 
-  <link rel="stylesheet" href="./assets/css/">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>Femcy Tech</title>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- Logged -->
+  <div class="container" id="dashboard-page">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <!-- fin navbar -->
+
+    <!-- post -->
+    <div id="post">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <textarea rows="4" cols="50"></textarea>
+
+
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      <!-- botón like -->
+      <button type="button" id="iconLike" onclick="clickCounter()">
+        <i id="icon" class="fas fa-archive"></i>
+      </button>
     </div>
-  </nav>
-  <!-- fin navbar -->
-
-  <!-- Logo -->
-  <div class="container">
-    <h1>Femcy Tech</h1>
-    <img src="assets/img/Logo fem tech.png" alt="Logo de la página" srcset="">
+    <!-- fin botón like -->
+    <!-- fin del post -->
   </div>
-  <!-- Fin del logo -->
+  <!-- End logged -->
 
   <!-- Login -->
-  <div id="login-page" class="login-page mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <div class="panel-title">INGRESAR</div>
-      </div>
+  <div class="container">
+    <div id="login-page" class="login-page mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title">INGRESAR</div>
+        </div>
 
-      <div style="padding-top:30px" class="panel-body">
+        <div style="padding-top:30px" class="panel-body">
 
-        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+          <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-        <form id="loginform" class="form-horizontal" role="form">
+          <form id="loginform" class="form-horizontal" role="form">
 
-          <div style="margin-bottom: 25px" class="input-group">
-            <span class="input-group-addon">
-              <i class="glyphicon glyphicon-user"></i>
-            </span>
-            <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="correo electrónico">
-          </div>
-
-          <div style="margin-bottom: 25px" class="input-group">
-            <span class="input-group-addon">
-              <i class="glyphicon glyphicon-lock"></i>
-            </span>
-            <input id="login-password" type="password" class="form-control" name="password" placeholder="contraseña">
-          </div>
-
-          <div style="margin-top:10px" class="form-group">
-            <!-- Button -->
-
-            <div class="col-sm-12 controls">
-              <a id="btn-login" onclick="login()" class="btn btn-success">Ingresar</a>
-              <a id="btn-fblogin" onclick="loginWithFacebook()" class="btn btn-primary">Ingresar con Facebook</a>
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon">
+                <i class="glyphicon glyphicon-user"></i>
+              </span>
+              <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="correo electrónico">
             </div>
-          </div>
 
-          <div class="form-group">
-            <div class="col-md-12 control">
-              <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
-                Si no te haz registrado,
-                <a href="#" onclick="showRegisterPage()">
-                  registrate aquí!
-                </a>
+            <div style="margin-bottom: 25px" class="input-group">
+              <span class="input-group-addon">
+                <i class="glyphicon glyphicon-lock"></i>
+              </span>
+              <input id="login-password" type="password" class="form-control" name="password" placeholder="contraseña">
+            </div>
+
+            <div style="margin-top:10px" class="form-group">
+              <!-- Button -->
+
+              <div class="col-sm-12 controls">
+                <a id="btn-login" onclick="login()" class="btn btn-success">Ingresar</a>
+                <a id="btn-fblogin" onclick="loginWithFacebook()" class="btn btn-primary">Ingresar con Facebook</a>
               </div>
             </div>
+
+            <div class="form-group">
+              <div class="col-md-12 control">
+                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                  Si no te haz registrado,
+                  <a href="#" onclick="showRegisterPage()">
+                    registrate aquí!
+                  </a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Fin Login -->
+
+    <!-- Register -->
+    <div id="register-page" class="register-page mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <div class="panel-title">REGISTRO</div>
+          <div style="float:right; font-size: 85%; position: relative; top:-10px">
+            <a id="signinlink" href="#" onclick="showLoginPage()">Ingresar</a>
           </div>
-        </form>
+        </div>
+        <div class="panel-body">
+          <form id="signupform" class="form-horizontal" role="form">
 
+            <div id="signupalert" style="display:none" class="alert alert-danger">
+              <p>Error:</p>
+              <span></span>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-9">
+                <input id="register-email" type="text" class="form-control" name="email" placeholder="correo electrónico">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-9">
+                <input id="register-password" type="password" class="form-control" name="passwd" placeholder="contraseña">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <!-- Button -->
+              <div class="col-md-offset-3 col-md-9">
+                <button id="btn-signup" type="button" class="btn btn-info" onclick="register()">
+                  <i class="icon-hand-right"></i> &nbsp Registrarme</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-
   </div>
-  <!-- Fin Login -->
+  <!-- Fin register -->
 
 
 
-  <!-- post -->
-  <div id="post">
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <textarea rows="4" cols="50"></textarea>
 
 
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-    <!-- botón like -->
-    <button type="button" id="iconLike" onclick="clickCounter()">
-      <i id="icon" class="fas fa-archive"></i>
-    </button>
-  </div>
-  <!-- fin botón like -->
-  </div>
-  <!-- fin del post -->
 
   <!-- links firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
@@ -163,6 +204,7 @@
 
   <!-- js -->
   <script src="./assets/js/app.js"></script>
+
 
   <!-- Firebase inicialize -->
   <script>
