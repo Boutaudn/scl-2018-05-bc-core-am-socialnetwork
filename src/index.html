@@ -10,11 +10,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
 
+
   <link rel="stylesheet" href="./assets/css/style.css">
+
   <title>Femcy Tech</title>
 </head>
 
 <body>
+  
   <!-- Logged -->
   <div class="container" id="dashboard-page">
     <!-- Navbar -->
@@ -58,20 +61,20 @@
       </div>
     </nav>
     <!-- fin navbar -->
-
-    <!-- post -->
-    <div id="post">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <textarea rows="4" cols="50"></textarea>
-
-
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
-        </div>
-      </div>
+    <!--Logo-->
+    <div class="container">
+  <h1>Femcy Tech</h1>
+    <img src="assets/img/LogoFTsintexto.png" alt="Logo de la página" srcset="">
+  </div>
+  <!-- Fin del logo -->
+      <!-- post -->
+  <section id="posteos">
+  <div id="muro"></div>
+  <div id="post">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <input type="text" id="titulo" placeholder="Titulo de tu post">
+        <textarea id="text" rows="4" cols="50" placeholder="" ></textarea>
       <!-- botón like -->
       <button type="button" id="iconLike" onclick="clickCounter()">
         <i id="icon" class="fas fa-archive"></i>
@@ -84,6 +87,7 @@
 
   <!-- Login -->
   <div class="container">
+
     <div id="login-page" class="login-page mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-info">
         <div class="panel-heading">
@@ -91,6 +95,7 @@
         </div>
 
         <div style="padding-top:30px" class="panel-body">
+
 
           <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
@@ -103,12 +108,14 @@
               <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="correo electrónico">
             </div>
 
+
             <div style="margin-bottom: 25px" class="input-group">
               <span class="input-group-addon">
                 <i class="glyphicon glyphicon-lock"></i>
               </span>
               <input id="login-password" type="password" class="form-control" name="password" placeholder="contraseña">
             </div>
+
 
             <div style="margin-top:10px" class="form-group">
               <!-- Button -->
@@ -174,20 +181,15 @@
           </form>
         </div>
       </div>
+      <button class="btn btn-info" onclick="guardar()" id="boton">Guardar</button>
+
     </div>
+
   </div>
   <!-- Fin register -->
-
-
-
-
-
-
+    
   <!-- links firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-  <script src="./services/firebase/initialize.js"></script>
-  <script src="./services/auth/auth.js"></script>
-  <script src="./pages/login/login.js"></script>
 
 
   <!-- links de bootstrap -->
@@ -200,13 +202,13 @@
     crossorigin="anonymous"></script>
   <script src="assets/js/app.js"></script>
   <script src="../app/like.js"></script>
+
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
 
   <!-- js -->
   <script src="./assets/js/app.js"></script>
 
-
-  <!-- Firebase inicialize -->
+    <!-- Firebase inicialize -->
   <script>
     var config = {
       apiKey: "AIzaSyA9KOG2Mc1NSFQ7h9OPNJbNJEDxJ62ivYI",

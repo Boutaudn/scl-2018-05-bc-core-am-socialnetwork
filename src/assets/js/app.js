@@ -109,62 +109,113 @@ firebase.initializeApp({
   projectId: "red-social-cfa45"
 });
 
-// funcion para el contador de "aportes"
-let counter = 0;
-function clickCounter() {
-  counter += 1;
-  document.getElementById("icon").innerHTML = counter;
-  document.getElementById('registro').classList.add('d-none');
-}
+// Initialize Cloud Firestore through Firebase
+var db = firebase.firestore();
 
-// alert de terminos y condiciones
-function termsAndConditions() {
-  alert('Los terminos y condiciones son blablablablabla');
-  confirm('Los terminos y condiciones son blablablablabla');
-}
 
-//evento enviar msj
-function sendMessage() {//pensar qué debe ocurrir para enviar un mensaje, desde el usuario
-  const currentUser = firebase.auth().currentUser;
-  const messageText = document.getElementById('inputMessageChat').value;
+// Subir un post
 
-  document.getElementById('message-box').value = "";
+// Agregar documento
+function guardar() {
+  var texto = document.getElementById('text').value;
+  let name = "mi@mail.com";
+  let d = new Date();
+  let time = d.getHours() + ":" + d.getMinutes();
+  let date = d.getDate() + "." + d.getMonth() + "." + d.getFullYear();
+  let title = document.getElementById('titulo').value;
 
-  //para tener una nueva llave en la colección messages
-  const newMessageKey = firebase.database().ref().child('messages').push().key; //metodo de firebase
-
-  firebase.database().ref(`messages/${newMessageKey}`).set({
-    creator: currentUser.uid,
-    creatorName: currentUser.displayName,
-    text: messageText,
-    //profile_picture: imgurl
-  }); //ref, ruta para guardar los mensajes
-}
-
-// evento mensaje
-function setupMessages() {
-  firebase.database().ref('messages')
-    .limitToLast(100)
-    .on('child_added', (newMessage) => {
-      document.getElementById("message-container").innerHTML +=
-        `<li class="right clearfix">
-                          <div class="chat-body clearfix">
-                              <div class="header">
-                                  <small class=" text-muted">
-                                      <span class="glyphicon glyphicon-time"></span>13 mins ago</small>
-                                  <strong class="pull-right primary-font">${newMessage.val().creatorName}</strong>
-                              </div>
-                              <p>${newMessage.val().text}</p>
-                          </div>
-                      </li>`;
+  db.collection("post").add({
+    name: name,
+    title: title,
+    texto: texto,
+    date: date,
+    time: time
+  })
+    .then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+      console.log('sí se ha guardado');
+      document.getElementById('text').value = '';
+      document.getElementById('titulo').value = '';
+    })
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
     });
 }
 
-// evento enviar desde el teclado con boton enter
-let inputMessage = document.getElementById("inputMessageChat");
-inputMessage.addEventListener("keyup", function (event) {
-  event.preventDefault();
-  if (event.keyCode === 13) {
-    document.getElementById("btn-chat").click();
-  }
+// Leer comentarios
+var posteos = document.getElementById('muro');
+
+db.collection("post").onSnapshot((querySnapshot) => {
+  posteos.innerHTML = '';
+  querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+      posteos.innerHTML += `
+      <div id="post">
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h5>${doc.data().title}</h5>
+          <h11 class="card-subtitle mb-2 text-muted">${doc.data().name}</h11>
+          <p>${doc.data().texto}</p>
+          <button class="btn btn-danger" onclick="myFunction(event, '${doc.id}')">Eliminar</button>
+          <button class="btn btn-warning" onclick="editar('${doc.id}', '${doc.data().title}', '${doc.data().texto}')">Editar</button>
+          <h6>${doc.data().time}</h6>
+          </div>
+      </div>`
+      /* <tr>
+            <th scope="row">${doc.data().time}</th>
+            <td>${doc.data().first}</td>
+            <td>${doc.data().last}</td>
+            <td>${doc.data().born}</td>
+            <td><button class="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button></td>
+            <td><button class="btn btn-warning" onclick="editar('${doc.id}', '${doc.data().first}', '${doc.data().last}', '${doc.data().born}')">Editar</button></td>
+          </tr> */
+
+    });
 });
+
+// Borrar documentos
+function eliminar(id){
+  db.collection("post").doc(id).delete().then(function() {
+    console.log("Document successfully deleted!");
+  }).catch(function(error) {
+    console.error("Error removing document: ", error);
+  });
+}
+
+function myFunction(event, id) {
+  if (confirm("estas seguro??")) {
+    eliminar(id);
+  } else {
+    console.log('no eliminar');
+  }
+}
+
+
+// Editar documento
+function editar(id, titulo, texto){
+  document.getElementById('titulo').value = titulo;
+  document.getElementById('text').value = texto;
+  var boton = document.getElementById('boton');
+  boton.innerHTML = 'Editar';
+  boton.onclick = function(){
+
+    let editarPost = db.collection("post").doc(id);
+    let title = document.getElementById('titulo').value;
+    let texto = document.getElementById('text').value;
+
+    return editarPost.update({
+      title: title,
+      texto: texto
+    })
+    .then(function() {
+      console.log("Document successfully updated!");
+      boton.innerHTML = 'Guardar';
+      document.getElementById('titulo').value = '';
+      document.getElementById('text').value = '';
+    })
+    .catch(function(error) {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
+  }
+}
