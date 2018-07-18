@@ -37,8 +37,9 @@ function logout() {
       })
       .catch();
 }
+/* -------FIN LOGIN------- */
 
-/* -------router------ */
+/* -------router, login, register------ */
 function showRegisterPage() {
   $('#login-page').hide(); 
   $('#perfil-page').hide(); 
@@ -67,7 +68,7 @@ function showLoginPage() {
   $('#register-page').hide();
 }
 /* -------fin router------ */
-/* -------FIN LOGIN------- */
+
 
 // inicializacion de firebase
 firebase.initializeApp({
