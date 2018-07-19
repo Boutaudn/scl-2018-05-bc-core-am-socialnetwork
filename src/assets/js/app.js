@@ -204,26 +204,22 @@ inputMessage.addEventListener("keyup", function (event) {
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data()}`);
         posteos.innerHTML += `
-        <div id="post">
-        <div class="card" style="width: 20rem;">
-          <div class="card-body">
-            <h5>${doc.data().title}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">${doc.data().name}</h6>
-            <p>${doc.data().texto}</p>
-            <button class="btn btn-danger" onclick="myFunction(event, '${doc.id}')">Eliminar</button>
-            <button class="btn btn-warning" onclick="editar('${doc.id}', '${doc.data().title}', '${doc.data().texto}')">Editar</button>
-            </div>
-            <h6>${doc.data().time}</h6>
-            </div>
-        </div>`
-        /* <tr>
-              <th scope="row">${doc.data().time}</th>
-              <td>${doc.data().first}</td>
-              <td>${doc.data().last}</td>
-              <td>${doc.data().born}</td>
-              <td><button class="btn btn-danger" onclick="eliminar('${doc.id}')">Eliminar</button></td>
-              <td><button class="btn btn-warning" onclick="editar('${doc.id}', '${doc.data().first}', '${doc.data().last}', '${doc.data().born}')">Editar</button></td>
-            </tr> */
+        <div id="jumbotron" class="shadow p-2 mb-3 bg-light rounded">
+        <div class="jumbotron jumbotron-fluid">
+        <div class="container" id="jumbotron">
+          <h5 class="display-5">${doc.data().title}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${doc.data().name}</h6>
+          <p class="lead">${doc.data().texto}</p>
+          <h6 class="card-subtitle mb-2 text-muted">${doc.data().time}</h6>
+          <button class="btn btn-danger btn-sm" onclick="myFunction(event, '${doc.id}')">Eliminar</button>
+          <button class="btn btn-warning btn-sm" onclick="editar('${doc.id}', '${doc.data().title}', '${doc.data().texto}')">Editar</button>
+          <button type="button" id="iconLike" onclick="clickCounter()">
+          <i id="icon" class="fas fa-archive"></i>
+         </div>
+         <a href="#" class="card-link">ver más</a>
+
+       </div>
+     </div>`
   
       });
   });

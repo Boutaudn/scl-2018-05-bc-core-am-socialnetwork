@@ -58,30 +58,30 @@
     <!-- fin navbar -->
 
     <!-- post -->
-    <section id="posteos">
+   
    <div id="muro"></div>
    <div id="post">
-     <div class="card" style="width: 18rem;">
+     <h4>Publica un post en la comunidad</h4>
+     <div class="card shadow p-2 mb-3 bg-light rounded">
        <div class="card-body">
+         <p class="font-weight-light">Pónle un título a tu post</p>
         <input type="text" id="titulo" placeholder="Titulo de tu post">
-       <textarea id="text" rows="4" cols="50" placeholder="" ></textarea>
- 
- 
-         <a href="#" class="card-link">Card link</a>
-         <a href="#" class="card-link">Another link</a>
+        <p class="font-weight-light">Aquí va tu texto</p>
+       <textarea id="text" rows="4" cols="30" placeholder="" ></textarea>
+
        </div>
+       <input type="file" class="form-control-file font-weight-light" id="exampleFormControlFile1">
+
        <button class="btn btn-info" onclick="guardar()" id="boton">Guardar</button>
  
      </div>
-     <!-- botón like -->
-     <button type="button" id="iconLike" onclick="clickCounter()">
-       <i id="icon" class="fas fa-archive"></i>
-     </button>
+
+
    </div>
-   <!-- fin botón like -->
-   <button type=""></button>
-   </div>
- </section>
+   <section id="posteos"> </section>
+
+   
+
   <!-- fin post-->
   <!-- End logged -->
 
