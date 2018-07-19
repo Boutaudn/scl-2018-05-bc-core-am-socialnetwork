@@ -1,70 +1,31 @@
 # Red Social
 
-## Preámbulo
+¿Eres un entusiasta autodidacta y/o un profesional que posee conocimiento en las ciencias de la tecnología o salud?
+¿Te preocupa el bienestar de las personas y deseas compartir tus conocimientos y preguntas en una comunidad con tus mismos intereses?
+¿Te consideras feminista?
+Somos estudiantes de Laboratorio, un curso enfocado en formar a mujeres en el área de la tecnología, mayormente orientado en dar soluciones a través del desarrollo web.
+Hoy en día la información sobre los temas anteriormente mencionados se encuentran institucionalizados y esto dificulta a personas naturales a tener un espacio de discusión e ideas para aportar sus conocimientos y al desarrollo de estos temas. 
+Es de conocimiento estandarizado que las mujeres en las industrias o en las ciencias son
+marginadas y no se les da el aporte o el reconocimiento necesario.
+Nuestra página se encargará de crear entonces una red social que nos brinde ese espacio donde profesionales y entusiastas autodidactas compartan información sin denigrar por género o
+título, solo será de relevancia la motivación al aporte o al aprendizaje
+Esto nos brindará un espacio seguro y eficaz al alcance de todo el que lo desee.
+Nuestro objetivo es que la información esté disponible a quien desee aportar o aprender. Como estudiantes de Laboratoria tenemos una formación orientada al correcto 
+aprendizaje siempre y cuando se valide la fuente para evitar la desinformación, implementando así un método de growth mind en la comunidad.
+Si piensas que puedes ser un aporte para esta comunidad o si deseas expandir tus conocimientos, te dejamos invitado a `FEMCY TECH`.
 
-Un emprendedor muy visionario nos ha encargado crear una red social. No nos da
-mucho detalle sobre qué tipo de red social quiere, él solo nos dice que creemos
-la que mejor podamos y que luego lo convenzamos de que nuestra red social será
-la más exitosa. El emprendedor nos da ciertos tópicos en los que le gustaría
-invertir. Estos son:
+#### Aquí podras:
 
-* Alimentación
-* Feminismo
-* Educación
-* Salud
-* Energías Renovables
+* Compartir informacion de temas que te parescan relevantes
+* Crear discuciones sobre esos temas
+* Marcar los post que te parescan de mayor relevancia
+* Contactar mediante un chat con personas con tus mismos intereses
 
+### FEMCY TECH está enfocado a
 
+Personas radicadas en Chile con conocimientos técnicos en el área de ciencia, informática, arduinos, ingeniería y salud, adquiridos mediante una formación autodidacta o formal. Personas que creen en el empoderamiento de la comunidad y no quieren que sus datos sean mal utilizados o ser discriminados por género o títulos, mientras comparten informacion.
 
-## Parte obligatoria
+###Primeros diseños
 
-### Definición del producto
-
-En el `README.md` cuéntanos cómo pensaste y te acercaste a los usuarios al
-desarrollar tu producto y cuál fue tu proceso para definir el producto final a
-nivel de experiencia y de interfaz. Si tienes fotos de entrevistas,
-cuestionarios y/o sketches compártelos. La especificación de ésta la encontrarás
-en el apartado de entregables.
-
-### Entregables
-
-#### 1) Definición del producto
-
-En el `README.md` cómo conociste el mercado de las redes sociales, cómo
-descubriste las necesidades de los usuarios, cómo llegaste  la definición final
-de tu producto. Es importante que detalles:
-
-* Cuáles son los elementos básicos que tiene una red social
-* Quiénes son los principales usuarios de producto
-* Qué problema resuelve el producto para estos usuarios
-* Cuáles son los objetivos de estos usuarios en relación con el producto
-* Cuáles son las principales funcionalidades del producto y cuál es su prioridad
-* Cómo verificaste que el producto les está resolviendo sus problemas
-* Cómo te asegurarás que estos usuarios usen este producto
-
-Para poder llegar a estas definiciones te recomendamos ver: benchmarks,
-entrevistas con usuarios y tests de usabilidad.
-
-#### 2) Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
-
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu producto y
-con eso deberás diseñar la Interfaz de Usuario (UI por sus siglas en inglés) de
-esta red social que siga este flujo. Para esto debes utilizar la herramienta de
-diseño visual de tu preferencia. Nosotros te recomendamos Figma dado que es una
-herramienta que funciona en el navegador y puedes crear una cuenta gratis. Sin
-embargo, eres libre de utilizar otros editores gráficos como Illustrator,
-Photoshop, PowerPoint, Keynote, etc.
-
-Este diseño debe representar la solución que se implementará finalmente en código.
-
-Tu diseño debe seguir los fundamentos de visual design, como: contraste,
-alineación, jerarquía, entre otros. Tip: revisa el contenido de UX de la unidad
-de visual design.
-
-#### 3) Implementación de la Interfaz de Usuario
-
-La idea para este producto es que el producto a desarrollar siga los
-lineamientos propuestos en el diseño de la interfaz de usuario. Asegúrate a lo
-largo de la implementación que los elementos propuestos están siendo
-implementados correctamente. (Hint: testing
-
+* [Diseño desktop en baja](https://balsamiq.cloud/skg5gf3/pza4ath/r2278)
+* [Diseño mobile en baja](https://balsamiq.cloud/skg5gf3/p3rvqkj/r2278)
