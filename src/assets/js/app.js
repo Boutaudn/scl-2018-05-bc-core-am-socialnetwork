@@ -117,8 +117,7 @@ function clickCounter() {
 
 // alert de terminos y condiciones
 function termsAndConditions() {
-  alert('Los terminos y condiciones son blablablablabla');
-  confirm('Los terminos y condiciones son blablablablabla');
+  confirm('Los terminos y condiciones de Femcy Tech se basan en una actitud respetuosa, abierta en el intercambio de ideas. NO se toleraran a personas de pensamiento o de comportamiento critico destructivo, se apoya el tipo de critica constructiva, es decir, aporte en los diversos temas y en la página en si.');
 }
 
 //evento enviar msj

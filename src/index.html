@@ -47,12 +47,12 @@
             </div>
           </li>
           <li class="nav-item text-light">
-            <a class="nav-link right" onclick="showLoginPage()">Logout</a>
+            <a class="nav-link right" onclick="showLoginPage()">Cerrar Sesión</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar Tema " aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
         </form>
       </div>
     </nav>
@@ -173,7 +173,11 @@
               </div>
               <input id="register-password" type="password" class="form-control" name="passwd" placeholder="contraseña">
             </div>
-
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">acepto los</label>
+                <button id="termsAndConditions" onclick="termsAndConditions()">terminos y condiciones</button>
+              </div>
             <div class="form-group">
               <!-- Button -->
               <div class="col-md-offset-3 col-md-9">
@@ -190,8 +194,13 @@
 
   <!--Perfil page-->
   <section id="perfil-page" class="perfil-page">
+    <div class="text-center">
+      <img id="imgUserDefault" src="../src/assets/img/default_user.png" class="rounded" alt="acá va la imagen del usuario">
+      <input type="file" id="inputChooseImg" class="form-control-file font-weight-light" id="exampleFormControlFile1">
+      <button class="btn btn-info" onclick="guardar()" id="botonPerfil">Guardar</button>
+    </div>
     <div>
-      <input type="file" class="form-control-file font-weight-light" id="exampleFormControlFile1">
+      <textarea name="text" id="comentMyProfile" cols="30" rows="10"></textarea>
     </div>
   </section>
 
