@@ -1,4 +1,3 @@
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +19,15 @@
       <a class="navbar-brand text-light" href="#">Femcy Tech</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        <span class="navbar-toggler-icon">
+          <i class="fas fa-bars"></i>
+        </span>
       </button>
 
       <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link text-light" href="#">Mi perfil
+            <a class="nav-link text-light" onclick="showPerfilPage()" href="#">Mi perfil
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -46,7 +47,7 @@
             </div>
           </li>
           <li class="nav-item text-light">
-            <a class="nav-link right" onclick="showLoginPage()" >Logout</a>
+            <a class="nav-link right" onclick="showLoginPage()">Logout</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -58,29 +59,28 @@
     <!-- fin navbar -->
 
     <!-- post -->
-   
-   <div id="muro"></div>
-   <div id="post">
-     <h4>Publica un post en la comunidad</h4>
-     <div class="card shadow p-2 mb-3 bg-light rounded">
-       <div class="card-body">
-         <p class="font-weight-light">Pónle un título a tu post</p>
-        <input type="text" id="titulo" placeholder="Titulo de tu post">
-        <p class="font-weight-light">Aquí va tu texto</p>
-       <textarea id="text" rows="4" cols="30" placeholder="" ></textarea>
+    <div id="post">
+      <h4>Publica un post en la comunidad</h4>
+      <div class="card shadow p-2 mb-3 bg-light rounded">
+        <div class="card-body">
+          <p class="font-weight-light">Pónle un título a tu post</p>
+          <input type="text" id="titulo" placeholder="Titulo de tu post">
+          <p class="font-weight-light">Aquí va tu texto</p>
+          <textarea id="text" rows="4" cols="30" placeholder=""></textarea>
 
-       </div>
-       <input type="file" class="form-control-file font-weight-light" id="exampleFormControlFile1">
+        </div>
+        <input type="file" class="form-control-file font-weight-light" id="exampleFormControlFile1">
 
-       <button class="btn btn-info" onclick="guardar()" id="boton">Guardar</button>
- 
-     </div>
+        <button class="btn btn-info" onclick="guardar()" id="boton">Guardar</button>
+
+      </div>
 
 
-   </div>
-   <section id="posteos"> </section>
+    </div>
+    <div id="muro"></div>
+    <section id="posteos"> </section>
+  </div>
 
-   
 
   <!-- fin post-->
   <!-- End logged -->
@@ -89,7 +89,7 @@
   <div class="container">
     <div id="login-page" class="login-page mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-info">
-       
+
         <div class="panel-heading">
           <img src="./assets/img/LogoFTletranuevanueva.png" class="rounded mx-auto d-block">
         </div>
@@ -108,7 +108,9 @@
             </div>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fas fa-key"></i>
+                </span>
               </div>
               <input id="login-password" type="password" class="form-control" name="password" placeholder="contraseña">
             </div>
@@ -143,7 +145,7 @@
     <div id="register-page" class="register-page mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-info">
         <div class="panel-heading">
-            <img src="./assets/img/LogoFTletranuevanueva.png" class="rounded mx-auto d-block">
+          <img src="./assets/img/LogoFTletranuevanueva.png" class="rounded mx-auto d-block">
           <div style="float:right; font-size: 85%; position: relative; top:-10px">
             <a id="signinlink" href="#" onclick="showLoginPage()">Ingresar</a>
           </div>
@@ -162,10 +164,12 @@
               </div>
               <input id="register-email" type="text" class="form-control" name="email" placeholder="correo electrónico">
             </div>
-           
+
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fas fa-key"></i>
+                </span>
               </div>
               <input id="register-password" type="password" class="form-control" name="passwd" placeholder="contraseña">
             </div>
@@ -184,8 +188,12 @@
   </div>
   <!-- Fin register -->
 
-
-
+  <!--Perfil page-->
+  <section id="perfil-page" class="perfil-page">
+    <div>
+      <input type="file" class="form-control-file font-weight-light" id="exampleFormControlFile1">
+    </div>
+  </section>
 
 
 
