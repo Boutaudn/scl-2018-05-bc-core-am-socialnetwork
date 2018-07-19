@@ -1,0 +1,237 @@
+<head>
+    <link rel="icon" href="assets/img/favicon (1).ico"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Femcy Tech</title>
+</head>
+
+<body>
+  <!-- Logged -->
+  <div class="container-fluid" id="dashboard-page">
+    <!-- Navbar -->
+    <nav class="navbar navbar fixed-top navbar-expand-lg bg-info text-white">
+      <a class="navbar-brand text-light" href="#">Femcy Tech</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <i class="fas fa-bars"></i>
+        </span>
+      </button>
+
+      <div class="collapse navbar-collapse text-light" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-light" onclick="showPerfilPage()" href="#">Mi perfil
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-link text-light">
+            <a class="nav-link text-light " href="#">Mis aportes</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              Temáticas
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Arduino</a>
+              <a class="dropdown-item" href="#">Biohacking</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Chat general</a>
+            </div>
+          </li>
+          <li class="nav-item text-light">
+            <a class="nav-link right" onclick="showLoginPage()">Cerrar Sesión</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar Tema " aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+      </div>
+    </nav>
+    <!-- fin navbar -->
+
+    <!-- post -->
+    <div id="post" style="padding-top:30px">
+      <h4>Publica un post en la comunidad</h4>
+      <div class="card shadow p-2 mb-3 bg-light rounded">
+        <div class="card-body">
+          <p class="font-weight-light">Pónle un título a tu post</p>
+          <input type="text" id="titulo" placeholder="Titulo de tu post">
+          <p class="font-weight-light">Aquí va tu texto</p>
+          <textarea id="text" rows="4" cols="30" placeholder=""></textarea>
+
+        </div>
+        <input type="file" class="form-control-file font-weight-light" id="exampleFormControlFile1">
+
+        <button class="btn btn-info" onclick="guardar()" id="boton">Guardar</button>
+
+      </div>
+
+
+    </div>
+    <div id="muro"></div>
+  </div>
+
+
+  <!-- fin post-->
+  <!-- End logged -->
+
+  <!-- Login -->
+  <div class="container">
+    <div id="login-page" class="login-page mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info">
+
+        <div class="panel-heading">
+          <img src="./assets/img/LogoFTletranuevanueva.png" class="rounded mx-auto d-block">
+        </div>
+
+        <div style="padding-top:30px" class="panel-body">
+
+          <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+          <form id="loginform" class="form-horizontal" role="form">
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fas fa-key"></i>
+                </span>
+              </div>
+              <input id="login-password" type="password" class="form-control" name="password" placeholder="contraseña">
+            </div>
+
+
+            <div style="margin-top:10px" class="form-group">
+              <!-- Button -->
+
+              <div class="col-sm-12 controls">
+                <a id="btn-login" onclick="login()" class="btn btn-info btn-sm text-light">Ingresar</a>
+                <a id="btn-fblogin" onclick="loginWithFacebook()" class="btn btn-primary btn-sm text-light">Ingresar con Facebook</a>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12 control">
+                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                  Si no te haz registrado,
+                  <a href="#" onclick="showRegisterPage()">
+                    registrate aquí!
+                  </a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Fin Login -->
+
+    <!-- Register -->
+    <div id="register-page" class="register-page mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <img src="./assets/img/LogoFTletranuevanueva.png" class="rounded mx-auto d-block">
+          <div style="float:right; font-size: 85%; position: relative; top:-10px">
+            <a id="signinlink" href="#" onclick="showLoginPage()">Ingresar</a>
+          </div>
+        </div>
+        <div class="panel-body">
+          <form id="signupform" class="form-horizontal" role="form">
+
+            <div id="signupalert" style="display:none" class="alert alert-danger">
+              <p>Error:</p>
+              <span></span>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+              </div>
+              <input id="register-email" type="text" class="form-control" name="email" placeholder="correo electrónico">
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fas fa-key"></i>
+                </span>
+              </div>
+              <input id="register-password" type="password" class="form-control" name="passwd" placeholder="contraseña">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">acepto los</label>
+                <button id="termsAndConditions" onclick="termsAndConditions()">terminos y condiciones</button>
+              </div>
+            <div class="form-group">
+              <!-- Button -->
+              <div class="col-md-offset-3 col-md-9">
+                <button id="btn-signup" type="button" class="btn btn-info right btn-sm btn-block" onclick="register()">
+                  <i class="icon-hand-center"></i> &nbsp Registrarme</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fin register -->
+
+  <!--Perfil page-->
+  <section id="perfil-page" class="perfil-page">
+    <div class="text-center">
+      <img id="imgUserDefault" src="../src/assets/img/default_user.png" class="rounded" alt="acá va la imagen del usuario">
+      <input type="file" id="inputChooseImg" class="form-control-file font-weight-light" id="exampleFormControlFile1">
+      <button class="btn btn-info" onclick="guardar()" id="botonPerfil">Guardar</button>
+    </div>
+    <div>
+      <textarea name="text" id="comentMyProfile" cols="30" rows="10"></textarea>
+    </div>
+  </section>
+
+
+
+  <!-- links firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+
+
+  <!-- links de bootstrap -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- Firebase inicialize -->
+  <script>
+    var config = {
+      apiKey: "AIzaSyA9KOG2Mc1NSFQ7h9OPNJbNJEDxJ62ivYI",
+      authDomain: "red-social-cfa45.firebaseapp.com",
+      databaseURL: "https://red-social-cfa45.firebaseio.com",
+      projectId: "red-social-cfa45",
+      storageBucket: "red-social-cfa45.appspot.com",
+      messagingSenderId: "19839803644"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>

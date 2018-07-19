@@ -1,0 +1,67 @@
+.panel-heading{
+  padding-top: 10%;
+  padding-bottom: 10%
+}
+
+#imgUserDefault{
+  width: 200px;
+  height: 200px;
+}
+
+#text{
+  resize: none;
+  width: 200px;
+  height: 200px;
+}
+
+#inputChooseImg{
+  text-align: center;
+}
+
+#termsAndConditions{
+  border: none;
+  background-color: inherit;
+  color: blue;
+}
+
+#comentMyProfile{
+  resize: none;
+  width: 200px;
+  height: 200px;
+}
+
+.login-page {
+  margin-top: 50px;
+}
+
+.register-page {
+    margin-top: 50px;
+    display: none;
+}
+
+.dashboard-page {
+    margin-top: 50px;
+    display: none;
+}
+
+.dashboard-page .panel-body
+{
+    overflow-y: scroll;
+    height: 70%;
+}
+
+#posteos {
+    text-align: center;
+    padding: 0%;
+    align-content: center;
+}
+
+#jumbotron {
+    padding: 0%;
+    align-content: center;
+}
+
+.card-body {
+    background-color: aliceblue;
+
+}
