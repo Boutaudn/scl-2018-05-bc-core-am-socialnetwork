@@ -1,11 +1,12 @@
 window.onload = () => {
+  console.log('CARGADO', firebase);
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {             //Si estamos logueados
-
       showDashboardPage(); //Cambiar a la pagina de dasboard
       setupMessages();     //Dejar todo listo para mostrar mensajes. 
 
     } else {                //No estamos logueados
+      console.log('AUN NO KAYBEL');
       showLoginPage();     //Cambiar a la pagina de login
     }
   });
@@ -54,6 +55,7 @@ function logout() {
 
 /* -------router, login, register------ */
 function showPerfilPage() {
+  console.log('1');
   $('#login-page').hide();
   $('#perfil-page').show();
   $('#dashboard-page').hide();
@@ -61,6 +63,7 @@ function showPerfilPage() {
 }
 
 function showRegisterPage() {
+  console.log('2');
   $('#login-page').hide();
   $('#perfil-page').hide();
   $('#dashboard-page').hide();
@@ -68,6 +71,8 @@ function showRegisterPage() {
 }
 
 function showDashboardPage() {
+
+  console.log('3');
   $('#login-page').hide();
   $('#perfil-page').hide();
   $('#dashboard-page').show();
@@ -75,6 +80,7 @@ function showDashboardPage() {
 }
 
 function showLoginPage() {
+  console.log('4');
   $('#login-page').show();
   $('#perfil-page').hide();
   $('#dashboard-page').hide();
@@ -269,19 +275,5 @@ inputMessage.addEventListener("keyup", function (event) {
           // The document probably doesn't exist.
           console.error("Error updating document: ", error);
       });
-    
-
-
-
-
-
-
-
-
-
-
-
-
-  
   }
 }
