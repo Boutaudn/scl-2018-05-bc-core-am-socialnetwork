@@ -208,15 +208,14 @@ inputMessage.addEventListener("keyup", function (event) {
         <div class="jumbotron jumbotron-fluid">
         <div class="container" id="jumbotron">
           <h5 class="display-5">${doc.data().title}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${doc.data().name}</h6>
-          <p class="lead">${doc.data().texto}</p>
-          <h6 class="card-subtitle mb-2 text-muted">${doc.data().time}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">${doc.data().name} a las: ${doc.data().time}</h6>
+          <p class="lead">${doc.data().texto} <a href="#" class="card-link">ver más</a> </p>
           <button class="btn btn-danger btn-sm" onclick="myFunction(event, '${doc.id}')">Eliminar</button>
-          <button class="btn btn-warning btn-sm" onclick="editar('${doc.id}', '${doc.data().title}', '${doc.data().texto}')">Editar</button>
+          <button class="btn btn-warning btn-sm" onclick="editar('${doc.id}', '${doc.data().title}', '${doc.data().texto}')">Editar</button> 
           <button type="button" id="iconLike" onclick="clickCounter()">
           <i id="icon" class="fas fa-archive"></i>
          </div>
-         <a href="#" class="card-link">ver más</a>
+        
 
        </div>
      </div>`
