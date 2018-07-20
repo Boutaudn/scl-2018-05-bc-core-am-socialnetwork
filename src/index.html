@@ -48,7 +48,7 @@
             </div>
           </li>
           <li class="nav-item text-light">
-            <a class="nav-link right" onclick="showLoginPage()">Cerrar Sesión</a>
+            <a class="nav-link right" onclick="showLoginPage(); logout()">Cerrar Sesión</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -176,8 +176,8 @@
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">acepto los</label>
-                <button id="termsAndConditions" onclick="termsAndConditions()">terminos y condiciones</button>
               </div>
+              <button id="termsAndConditions" onclick="termsAndConditions()">terminos y condiciones</button>
             <div class="form-group">
               <!-- Button -->
               <div class="col-md-offset-3 col-md-9">
@@ -197,10 +197,12 @@
     <div class="text-center">
       <img id="imgUserDefault" src="../src/assets/img/default_user.png" class="rounded" alt="acá va la imagen del usuario">
       <input type="file" id="inputChooseImg" class="form-control-file font-weight-light" id="exampleFormControlFile1">
-      <button class="btn btn-info" onclick="guardar()" id="botonPerfil">Guardar</button>
     </div>
     <div>
-      <textarea name="text" id="comentMyProfile" cols="30" rows="10"></textarea>
+      <textarea name="text" id="comentMyProfile" cols="30" rows="10" placeholder="Cuentanos sobre tí"></textarea>
+    </div>
+    <div id="userInfo">
+      <button onclick="infoUser()"> Guardar </button>
     </div>
   </section>
 
