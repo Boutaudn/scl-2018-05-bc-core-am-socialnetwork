@@ -29,7 +29,10 @@
   width: 200px;
   height: 200px;
 }
-
+#imgCar{
+  width: 400px;
+  height: 400px;
+}
 .login-page {
   margin-top: 50px;
 }
