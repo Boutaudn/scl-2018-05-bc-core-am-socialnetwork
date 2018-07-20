@@ -114,6 +114,8 @@ function clickCounter() {
   document.getElementById('registro').classList.add('d-none');
 }
 
+// https://www.youtube.com/watch?v=i3WdUCvCQSU&t=4s
+//video sobre como postear imagenes de la galeria
 
 // alert de terminos y condiciones
 function termsAndConditions() {
@@ -170,14 +172,11 @@ db.collection("post").onSnapshot((querySnapshot) => {
           <button type="button" id="iconLike" onclick="clickCounter()">
           <i id="icon" class="fas fa-archive"></i>
          </div>
-        
-
        </div>
      </div>`
 
   });
 });
-
 // Borrar documentos
 function eliminar(id) {
   db.collection("post").doc(id).delete().then(function () {
