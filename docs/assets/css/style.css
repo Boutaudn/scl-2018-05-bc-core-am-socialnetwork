@@ -17,8 +17,14 @@
 #inputChooseImg{
   text-align: center;
 }
+#volver{
+  background-color: yellow;
+  border: none;
+  position: fixed;
+  bottom: 50%;
+}
 
-#termsAndConditions{
+#terms{
   border: none;
   background-color: inherit;
   color: blue;
@@ -29,7 +35,10 @@
   width: 200px;
   height: 200px;
 }
-
+#imgCar{
+  width: 400px;
+  height: 400px;
+}
 .login-page {
   margin-top: 50px;
 }

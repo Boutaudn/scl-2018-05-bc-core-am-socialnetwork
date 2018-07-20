@@ -16,7 +16,7 @@
   <!-- Logged -->
   <div class="container-fluid" id="dashboard-page">
     <!-- Navbar -->
-    <nav class="navbar navbar fixed-top navbar-expand-lg bg-info text-white">
+    <nav class="navbar navbar  navbar-expand-lg bg-info text-white">
       <a class="navbar-brand text-light" href="#">Femcy Tech</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -32,36 +32,47 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-link text-light">
-            <a class="nav-link text-light " href="#">Mis aportes</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              Temáticas
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Arduino</a>
-              <a class="dropdown-item" href="#">Biohacking</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Chat general</a>
-            </div>
-          </li>
           <li class="nav-item text-light">
-            <a class="nav-link right" onclick="showLoginPage()">Cerrar Sesión</a>
+            <a class="nav-link text-light" onclick="logout()" href="#">Cerrar Sesión</a>
+            <span class="sr-only">(current)</span>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar Tema " aria-label="Search">
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
       </div>
     </nav>
     <!-- fin navbar -->
 
+    <!-- carousel-->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" id="imgCar" src="assets/img/arduinos.jpeg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" id="imgCar" src="assets/img/biotech.jpeg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" id="imgCar" src="assets/img/foro.jpeg" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    <!-- fin carousel-->
+
     <!-- post -->
+    <section>
     <div id="post" style="padding-top:30px">
-      <h4>Publica un post en la comunidad</h4>
       <div class="card shadow p-2 mb-3 bg-light rounded">
         <div class="card-body">
           <p class="font-weight-light">Pónle un título a tu post</p>
@@ -70,7 +81,6 @@
           <textarea id="text" rows="4" cols="30" placeholder=""></textarea>
 
         </div>
-        <input type="file" class="form-control-file font-weight-light" id="exampleFormControlFile1">
 
         <button class="btn btn-info" onclick="guardar()" id="boton">Guardar</button>
 
@@ -80,8 +90,7 @@
     </div>
     <div id="muro"></div>
   </div>
-
-
+</section>
   <!-- fin post-->
   <!-- End logged -->
 
@@ -176,7 +185,7 @@
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">acepto los</label>
-                <button id="termsAndConditions" onclick="termsAndConditions()">terminos y condiciones</button>
+                <button id="terms" onclick="termsAndConditions()">terminos y condiciones</button>
               </div>
             <div class="form-group">
               <!-- Button -->
@@ -196,11 +205,9 @@
   <section id="perfil-page" class="perfil-page">
     <div class="text-center">
       <img id="imgUserDefault" src="../src/assets/img/default_user.png" class="rounded" alt="acá va la imagen del usuario">
-      <input type="file" id="inputChooseImg" class="form-control-file font-weight-light" id="exampleFormControlFile1">
-      <button class="btn btn-info" onclick="guardar()" id="botonPerfil">Guardar</button>
+      <input type="file" id="inputChooseImg" class="form-control-file font-weight-light" id="exampleFormControlFile1" value="">
     </div>
-    <div>
-      <textarea name="text" id="comentMyProfile" cols="30" rows="10"></textarea>
+      <button id="volver" onclick="showDashboardPage()">Volver</button>
     </div>
   </section>
 
