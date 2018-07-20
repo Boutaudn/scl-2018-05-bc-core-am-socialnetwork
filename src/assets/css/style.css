@@ -17,6 +17,12 @@
 #inputChooseImg{
   text-align: center;
 }
+#volver{
+  background-color: yellow;
+  border: none;
+  position: fixed;
+  bottom: 0px;
+}
 
 #terms{
   border: none;

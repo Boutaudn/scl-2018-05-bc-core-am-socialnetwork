@@ -194,17 +194,6 @@ function myFunction(event, id) {
     console.log('no eliminar');
   }
 }
-
-//text area de la pagina de registro
-let infoUserProfile = document.getElementById('comentMyProfile').value;
-function infoUser() {
-  if (infoUserProfile.length > 0) {
-    return infoUserProfile.innerHTML;
-    console.log('aja enviado');
-  }
-}
-infoUserProfile = "";
-
 // Editar documento
 function editar(id, titulo, texto) {
   document.getElementById('titulo').value = titulo;
